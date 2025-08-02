@@ -79,7 +79,7 @@ class PatientUserRegisterSerializer(serializers.Serializer):
     โดยใช้ Email เป็น Username และมี Confirm Password
     """
     register_code = serializers.CharField(max_length=5, required=True)
-    email = serializers.EmailField(required=True)
+    email = serializers.EmailField(required=True,write_only=True)
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     confirm_password = serializers.CharField(write_only=True, required=True)
 
