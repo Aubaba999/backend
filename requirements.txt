@@ -12,4 +12,3 @@ PyMySQL==1.1.1
 sqlparse==0.5.3
 tzdata==2025.2
 virtualenv==20.31.2
-mysql-connector-python ==8.0.35
