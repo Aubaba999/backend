@@ -1,0 +1,129 @@
+
+/* Page Layout */
+.verification-page, 
+.create-account-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.verification-container, 
+.create-account-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Typography */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Form Styles */
+.verification-form, 
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+label {
+  color: #34495e;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.code-input, 
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.code-input:focus, 
+.form-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.code-input {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Buttons */
+.verify-button, 
+.create-button {
+  background: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.verify-button:hover, 
+.create-button:hover {
+  background: #2980b9;
+}
+
+.back-button {
+  background: transparent;
+  color: #7f8c8d;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #34495e;
+}
+
+/* Error Messages */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .verification-container, 
+  .create-account-container {
+    padding: 2rem;
+    margin: 1rem;
+  }
+}

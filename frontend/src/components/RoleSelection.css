@@ -1,0 +1,78 @@
+/* RoleSelection.css */
+.role-selection-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.role-selection-page h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.role-selection-page h2 {
+  color: #34495e;
+  margin-bottom: 2rem;
+}
+
+.role-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.role-card {
+  flex: 1;
+  max-width: 350px;
+  padding: 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.role-card h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.role-card p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.patient {
+  background-color: #e8f4fc;
+  border: 1px solid #3498db;
+}
+
+.doctor {
+  background-color: #f0f8f0;
+  border: 1px solid #27ae60;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .role-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .role-card {
+    max-width: 90%; /* Adjust for smaller screens */
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "users": [
+    {
+      "id": "DR-2025-001",
+      "email": "tum@example.com",
+      "password": "123456789",
+      "name": "Dr. Sarah Chen",
+      "specialty": "Dermatologist",
+      "license": "MD-12345",
+      "department": "Dermatology",
+      "avatarInitial": "SC",
+      "age": 38,
+      "role": 1
+    },
+    {
+      "id": "PT-2025-001",
+      "email": "tum1@example.com",
+      "password": "987654321",
+      "name": "John Smith",
+      "age": 32,
+      "bloodType": "O+",
+      "avatarInitial": "JS",
+      "role": 0
+    },
+    {
+      "id": "PT-2025-002",
+      "email": "alice@example.com",
+      "password": "password123",
+      "name": "Alice Wonderland",
+      "age": 25,
+      "bloodType": "A+",
+      "avatarInitial": "AW",
+      "phoneNumber": "090-111-2222",
+      "claimCode": "ABCDE",
+      "isClaimed": false,
+      "role": 0
+    },
+    {
+      "id": "PT-2025-003",
+      "email": "bob@example.com",
+      "password": "password456",
+      "name": "Bob The Builder",
+      "age": 35,
+      "bloodType": "B+",
+      "avatarInitial": "BB",
+      "phoneNumber": "065-333-4444",
+      "claimCode": null,
+      "isClaimed": true,
+      "role": 0
+    },
+    {
+      "id": "PT-2025-004",
+      "email": "emily@example.com",
+      "password": "password789",
+      "name": "Emily Johnson",
+      "age": 28,
+      "bloodType": "AB+",
+      "avatarInitial": "EJ",
+      "phoneNumber": "081-555-6666",
+      "role": 0
+    },
+    {
+      "id": "PT-2025-005",
+      "email": "michael@example.com",
+      "password": "password321",
+      "name": "Michael Lee",
+      "age": 42,
+      "bloodType": "O-",
+      "avatarInitial": "ML",
+      "phoneNumber": "089-777-8888",
+      "role": 0
+    },
+    {
+      "id": "DR-2025-002",
+      "email": "dr.michael@example.com",
+      "password": "doctor123",
+      "name": "Dr. Michael Lee",
+      "specialty": "General Practitioner",
+      "license": "MD-67890",
+      "department": "General Medicine",
+      "avatarInitial": "ML",
+      "age": 45,
+      "role": 1
+    },
+    {
+      "id": "DR-2025-003",
+      "email": "dr.emily@example.com",
+      "password": "doctor456",
+      "name": "Dr. Emily Johnson",
+      "specialty": "Oncologist",
+      "license": "MD-54321",
+      "department": "Oncology",
+      "avatarInitial": "EJ",
+      "age": 40,
+      "role": 1
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "doctorId": "DR-2025-001",
+      "patientId": "PT-2025-001",
+      "title": "Analysis Results Review",
+      "description": "Skin Analysis Review",
+      "date": "2025-01-29",
+      "time": "14:00",
+      "duration": 30,
+      "status": "confirmed",
+      "type": "consultation",
+      "createdBy": "DR-2025-001",
+      "createdAt": "2025-01-20T10:30:00Z",
+      "updatedAt": "2025-01-20T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "doctorId": "DR-2025-001",
+      "patientId": "PT-2025-001",
+      "title": "Follow-up Consultation",
+      "description": "Follow-up consultation after treatment",
+      "date": "2025-02-15",
+      "time": "10:30",
+      "duration": 45,
+      "status": "scheduled",
+      "type": "followup",
+      "createdBy": "DR-2025-001",
+      "createdAt": "2025-01-20T11:00:00Z",
+      "updatedAt": "2025-01-20T11:00:00Z"
+    },
+    {
+      "id": 3,
+      "doctorId": "DR-2025-001",
+      "patientId": "PT-2025-004",
+      "title": "Initial Consultation",
+      "description": "Skin Condition Assessment",
+      "date": "2025-01-30",
+      "time": "10:30",
+      "duration": 45,
+      "status": "scheduled",
+      "type": "initial",
+      "createdBy": "DR-2025-001",
+      "createdAt": "2025-01-20T11:00:00Z",
+      "updatedAt": "2025-01-20T11:00:00Z"
+    }
+  ],
+  "patients": [
+    {
+      "id": "PT-2025-002",
+      "name": "Alice Wonderland",
+      "avatarInitial": "AW",
+      "phoneNumber": "090-111-2222",
+      "claimCode": "ABCDE",
+      "isClaimed": false,
+      "status": "pending"
+    },
+    {
+      "id": "PT-2025-003",
+      "name": "Bob The Builder",
+      "avatarInitial": "BB",
+      "phoneNumber": "065-333-4444",
+      "claimCode": null,
+      "isClaimed": true,
+      "status": "completed"
+    }
+  ],
+  "recentPatients": [
+    {
+      "id": "PT-2025-001",
+      "name": "John Smith",
+      "condition": "Acne Treatment",
+      "lastVisit": "Jan 15, 2025",
+      "status": "Improving"
+    },
+    {
+      "id": "PT-2025-004",
+      "name": "Emily Johnson",
+      "condition": "Eczema Management",
+      "lastVisit": "Jan 12, 2025",
+      "status": "Stable"
+    },
+    {
+      "id": "PT-2025-005",
+      "name": "Michael Lee",
+      "condition": "Psoriasis Treatment",
+      "lastVisit": "Jan 10, 2025",
+      "status": "Under Review"
+    }
+  ],
+  "doctorsData": [
+    {
+      "id": "DR-2025-001",
+      "name": "Dr. Sarah Chen",
+      "specialty": "Dermatologist",
+      "next": "Next: Jan 29, 2025",
+      "lastVisit": null
+    },
+    {
+      "id": "DR-2025-002", 
+      "name": "Dr. Michael Lee",
+      "specialty": "General Practitioner",
+      "next": null,
+      "lastVisit": "Dec 15, 2024"
+    },
+    {
+      "id": "DR-2025-003",
+      "name": "Dr. Emily Johnson", 
+      "specialty": "Oncologist",
+      "next": null,
+      "lastVisit": "Nov 20, 2024"
+    }
+  ],
+  "doctorNotes": [
+    {
+      "id": 1,
+      "patientId": "PT-2025-001",
+      "doctorId": "DR-2025-001",
+      "doctorName": "Dr. Sarah Chen",
+      "date": "Jan 5, 2025",
+      "note": "Based on the analysis results, I recommend continuing with the prescribed topical treatment. The skin condition shows improvement. Please schedule a follow-up appointment in 2 weeks.",
+      "medications": [
+        "Tretinoin 0.025% cream - Apply once daily at night",
+        "Benzoyl peroxide 2.5% gel - Apply twice daily", 
+        "Gentle moisturizer - Use as needed"
+      ],
+      "createdAt": "2025-01-05T14:30:00Z"
+    }
+  ]
+}
