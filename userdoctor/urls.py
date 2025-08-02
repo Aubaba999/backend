@@ -1,11 +1,14 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # --- Auth ---
     path('register/doctor/', views.DoctorRegisterAPIView.as_view(), name='doctor-register'),
     path('register/patient/', views.PatientUserRegisterAPIView.as_view(), name='patient-user-register'),
     path('login/', views.LoginAPIView.as_view(), name='login'),
+    path('upload-image/', views.ImageUploadView.as_view(), name='upload-image'),
 
     # --- Doctor Routes ---
     path('doctor/profile/', views.DoctorProfileView.as_view(), name='doctor-profile'),

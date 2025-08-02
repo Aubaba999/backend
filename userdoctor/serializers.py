@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
-from .models import Patient, Appointment, Diagnosis, FaceImage
+from .models import Patient, Appointment, Diagnosis, FaceImage,UploadedImage
 User = get_user_model()
 Doctor = get_user_model() # ใช้วิธีนี้เพื่อเรียก Custom User Model
 
@@ -49,7 +49,10 @@ class PatientSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['register_code', 'doctor', 'doctor_name']
 
-
+class UploadedImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UploadedImage
+        fields = ['id', 'title', 'image', 'uploaded_at']
 
 # --- Serializers สำหรับส่วนอื่นๆ ---
 class FaceImageSerializer(serializers.ModelSerializer):

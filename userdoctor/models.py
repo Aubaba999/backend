@@ -68,6 +68,11 @@ class Diagnosis(models.Model):
     def __str__(self):
         return f"Diagnosis for {self.appointment.patient.full_name} on {self.date.strftime('%d-%m-%Y')}"
 
+class UploadedImage(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='uploads/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
 class FaceImage(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='face_images')
     image = models.ImageField(upload_to='face_images/')

@@ -3,12 +3,13 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate, get_user_model
-from .models import Patient, Appointment, Diagnosis, FaceImage
+from .models import Patient, Appointment, Diagnosis, FaceImage,UploadedImage
 from .serializers import (
     DoctorRegisterSerializer, DoctorProfileSerializer, PatientSerializer, 
-    PatientUserRegisterSerializer, AppointmentSerializer, DiagnosisSerializer, FaceImageSerializer
+    PatientUserRegisterSerializer, AppointmentSerializer, DiagnosisSerializer, FaceImageSerializer,UploadedImageSerializer
 )
 
 User = get_user_model()
@@ -41,6 +42,11 @@ class LoginAPIView(APIView):
         
 class PatientUserRegisterAPIView(generics.CreateAPIView):
     serializer_class = PatientUserRegisterSerializer
+
+class ImageUploadView(generics.CreateAPIView):
+    queryset = UploadedImage.objects.all()
+    serializer_class = UploadedImageSerializer
+    parser_classes = [MultiPartParser, FormParser] # สำคัญมากสำหรับรับไฟล์
 
 
 # -------------------- Doctor-Specific Views --------------------
