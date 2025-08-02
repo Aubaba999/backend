@@ -16,5 +16,6 @@ urlpatterns = [
     # --- Patient Routes ---
     path('patient/profile/', views.PatientProfileView.as_view(), name='patient-profile'),
     path('patient/appointments/', views.PatientAppointmentListView.as_view(), name='patient-appointments-list'),
+    path('validate-code/', views.validate_register_code, name='validate-code'),
     # เพิ่ม URL สำหรับจัดการ FaceImage, ดู Diagnosis ของตัวเอง
 ]

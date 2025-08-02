@@ -1,6 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate, get_user_model
@@ -69,6 +70,21 @@ class DoctorPatientDetailView(generics.RetrieveUpdateDestroyAPIView):
         return Patient.objects.filter(doctor=self.request.user)
 
 # -------------------- Patient-Specific Views --------------------
+@api_view(['POST'])
+def validate_register_code(request):
+    """
+    API สำหรับตรวจสอบว่า register_code ถูกต้องและยังไม่ถูกใช้งานหรือไม่
+    """
+    code = request.data.get('register_code', '')
+    if not code:
+        return Response({'error': 'กรุณากรอกรหัส'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        # ตรวจสอบว่ามี Patient ที่ใช้รหัสนี้และยังไม่มี user หรือไม่
+        Patient.objects.get(register_code=code, user__isnull=True)
+        return Response({'valid': True, 'message': 'รหัสถูกต้อง'}, status=status.HTTP_200_OK)
+    except Patient.DoesNotExist:
+        return Response({'valid': False, 'message': 'รหัสไม่ถูกต้อง หรือถูกใช้งานไปแล้ว'}, status=status.HTTP_404_NOT_FOUND)
 
 class PatientProfileView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
