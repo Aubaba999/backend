@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-_)sko8*b1+%ke5(b!)6-_zzvc6@&)=kk!b^9stvc&n*=%%!+i)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'web-production-9270.up.railway.app',
+    'genskin.vercel.app',
+]
 
 
 # Application definition
@@ -63,7 +66,11 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://genskin.vercel.app",
+]
 
 ROOT_URLCONF = 'doctor_api_project.urls'
 
