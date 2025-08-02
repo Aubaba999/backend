@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'web-production-9270.up.railway.app',
     'genskin.vercel.app',
-    'localhost:8000'
+    'localhost',
 ]
 
 
